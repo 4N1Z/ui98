@@ -46,6 +46,14 @@ const nextConfig = {
     // of heap on Windows (Turbopack hits OS handle limits instead). Trade some
     // rebuild speed for a smaller module graph in memory.
     webpackMemoryOptimizations: true,
+    // 98ui: `next build` on Vercel's 8 GB build machine was OOM-killed (exit
+    // 137) during static generation. Each render worker loads the whole
+    // 33-style module graph, so cap the worker count and the number of pages
+    // rendered at once instead of spawning one worker per vCPU.
+    cpus: 2,
+    workerThreads: false,
+    staticGenerationMaxConcurrency: 4,
+    staticGenerationMinPagesPerWorker: 50,
     // Rewrite barrel imports to deep imports so a single icon doesn't pull the
     // whole package into the module graph. Next already optimizes lucide-react,
     // @tabler/icons-react, date-fns and lodash-es by default; these are the
