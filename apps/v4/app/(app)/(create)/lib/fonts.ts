@@ -60,6 +60,12 @@ export const FONTS = [
   createFontOption("playfair-display"),
   createFontOption("eb-garamond"),
   createFontOption("instrument-serif"),
+  // 98ui retro fonts.
+  createFontOption("arimo"),
+  createFontOption("tinos"),
+  createFontOption("comic-neue"),
+  createFontOption("vt323"),
+  createFontOption("press-start-2p"),
 ] as const
 
 export type Font = (typeof FONTS)[number]

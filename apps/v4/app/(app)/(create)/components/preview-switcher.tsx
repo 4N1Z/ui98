@@ -1,7 +1,10 @@
 "use client"
 
 import { Button } from "@/registry/new-york-v4/ui/button"
-import { useDesignSystemSearchParams } from "@/app/(app)/(create)/lib/search-params"
+import {
+  RETRO_SHOWCASE_ITEMS,
+  useDesignSystemSearchParams,
+} from "@/app/(app)/(create)/lib/search-params"
 
 const PREVIEW_ITEMS = [
   { label: "01", value: "preview-02" },
@@ -11,8 +14,17 @@ const PREVIEW_ITEMS = [
 export function PreviewSwitcher() {
   const [params, setParams] = useDesignSystemSearchParams()
 
+  // 98ui: retro styles get a third tab for their era showcase block.
+  const showcase =
+    params.base === "aria" ? undefined : RETRO_SHOWCASE_ITEMS[params.style]
+  const items = showcase
+    ? [{ label: "Era", value: showcase }, ...PREVIEW_ITEMS]
+    : PREVIEW_ITEMS
+
   const isPreview =
-    params.item === "preview" || params.item.startsWith("preview-0")
+    params.item === "preview" ||
+    params.item.startsWith("preview-0") ||
+    params.item === showcase
 
   if (!isPreview) {
     return null
@@ -20,7 +32,7 @@ export function PreviewSwitcher() {
 
   return (
     <div className="dark absolute right-3 bottom-3 z-20 flex items-center gap-1 rounded-xl bg-card/90 p-1 shadow-xl backdrop-blur-xl">
-      {PREVIEW_ITEMS.map((item) => (
+      {items.map((item) => (
         <Button
           key={item.value}
           variant="ghost"

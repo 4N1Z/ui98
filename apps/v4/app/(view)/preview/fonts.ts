@@ -1,4 +1,6 @@
 import {
+  Arimo,
+  Comic_Neue,
   DM_Sans,
   EB_Garamond,
   Figtree,
@@ -19,12 +21,15 @@ import {
   Outfit,
   Oxanium,
   Playfair_Display,
+  Press_Start_2P,
   Public_Sans,
   Raleway,
   Roboto,
   Roboto_Slab,
   Source_Sans_3,
   Space_Grotesk,
+  Tinos,
+  VT323,
 } from "next/font/google"
 import { cn } from "cn"
 
@@ -159,6 +164,36 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
 })
 
+// 98ui retro fonts.
+const arimo = Arimo({
+  subsets: ["latin"],
+  variable: "--font-arimo",
+})
+
+const tinos = Tinos({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-tinos",
+})
+
+const comicNeue = Comic_Neue({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-comic-neue",
+})
+
+const vt323 = VT323({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-vt323",
+})
+
+const pressStart2P = Press_Start_2P({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-press-start-2p",
+})
+
 export const previewFontVariables = cn(
   geistSans.variable,
   inter.variable,
@@ -185,5 +220,10 @@ export const previewFontVariables = cn(
   lora.variable,
   playfairDisplay.variable,
   ebGaramond.variable,
-  instrumentSerif.variable
+  instrumentSerif.variable,
+  arimo.variable,
+  tinos.variable,
+  comicNeue.variable,
+  vt323.variable,
+  pressStart2P.variable
 )

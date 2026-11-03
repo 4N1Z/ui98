@@ -38,6 +38,10 @@ export const PRESET_STYLES = [
   "luma",
   "sera",
   "rhea",
+  // 98ui retro styles (append-only).
+  "win95",
+  "geocities",
+  "y2k",
 ] as const
 
 export const PRESET_BASE_COLORS = [
@@ -49,6 +53,10 @@ export const PRESET_BASE_COLORS = [
   "olive",
   "mist",
   "taupe",
+  // 98ui retro base colors (append-only).
+  "win95",
+  "geocities",
+  "y2k",
 ] as const
 
 export const PRESET_THEMES = [
@@ -77,6 +85,10 @@ export const PRESET_THEMES = [
   "olive",
   "mist",
   "taupe",
+  // 98ui retro themes (append-only).
+  "win95",
+  "geocities",
+  "y2k",
 ] as const
 
 export const PRESET_CHART_COLORS = PRESET_THEMES
@@ -129,6 +141,12 @@ export const PRESET_FONTS = [
   "instrument-sans",
   "eb-garamond",
   "instrument-serif",
+  // 98ui retro fonts (append-only).
+  "arimo",
+  "tinos",
+  "comic-neue",
+  "vt323",
+  "press-start-2p",
 ] as const
 export const PRESET_FONT_HEADINGS = ["inherit", ...PRESET_FONTS] as const
 

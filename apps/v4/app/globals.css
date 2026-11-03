@@ -28,6 +28,15 @@
 @source "../styles/radix-rhea/**/*.tsx";
 @source "../styles/radix-sera/**/*.tsx";
 @source "../styles/radix-vega/**/*.tsx";
+@source "../styles/base-win95/**/*.tsx";
+@source "../styles/base-geocities/**/*.tsx";
+@source "../styles/base-y2k/**/*.tsx";
+@source "../styles/aria-win95/**/*.tsx";
+@source "../styles/aria-geocities/**/*.tsx";
+@source "../styles/aria-y2k/**/*.tsx";
+@source "../styles/radix-win95/**/*.tsx";
+@source "../styles/radix-geocities/**/*.tsx";
+@source "../styles/radix-y2k/**/*.tsx";
 
 @custom-variant style-vega (&:where(.style-vega *));
 @custom-variant style-nova (&:where(.style-nova *));
@@ -37,6 +46,9 @@
 @custom-variant style-luma (&:where(.style-luma *));
 @custom-variant style-sera (&:where(.style-sera *));
 @custom-variant style-rhea (&:where(.style-rhea *));
+@custom-variant style-win95 (&:where(.style-win95 *));
+@custom-variant style-geocities (&:where(.style-geocities *));
+@custom-variant style-y2k (&:where(.style-y2k *));
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant fixed (&:is(.layout-fixed *));

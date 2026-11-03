@@ -8,3 +8,6 @@
 @import "../registry/styles/style-luma.css" layer(base);
 @import "../registry/styles/style-sera.css" layer(base);
 @import "../registry/styles/style-rhea.css" layer(base);
+@import "../registry/styles/style-win95.css" layer(base);
+@import "../registry/styles/style-geocities.css" layer(base);
+@import "../registry/styles/style-y2k.css" layer(base);

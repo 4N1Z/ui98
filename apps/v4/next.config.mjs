@@ -42,6 +42,10 @@ const nextConfig = {
   },
   experimental: {
     turbopackSharedRuntime: false,
+    // 98ui: with 33 generated base/style trees the webpack dev server runs out
+    // of heap on Windows (Turbopack hits OS handle limits instead). Trade some
+    // rebuild speed for a smaller module graph in memory.
+    webpackMemoryOptimizations: true,
     // Rewrite barrel imports to deep imports so a single icon doesn't pull the
     // whole package into the module graph. Next already optimizes lucide-react,
     // @tabler/icons-react, date-fns and lodash-es by default; these are the

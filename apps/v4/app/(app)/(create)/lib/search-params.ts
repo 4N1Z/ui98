@@ -208,10 +208,31 @@ function normalizeDesignSystemParams(
   return result
 }
 
+// 98ui: each retro style ships an era-specific showcase block. When the URL
+// carries no explicit item, open that block instead of the generic dashboard
+// preview so the style is seen in its own habitat. The aria base has no retro
+// blocks (no Menubar there), so it keeps the default preview.
+export const RETRO_SHOWCASE_ITEMS: Partial<Record<StyleName, string>> = {
+  win95: "desktop-01",
+  geocities: "homepage-01",
+  y2k: "portal-01",
+}
+
+type SearchParamsLike = Pick<URLSearchParams, "get" | "has">
+
+function resolveDefaultItem(
+  params: Pick<DesignSystemSearchParams, "base" | "style" | "item">,
+  searchParams: SearchParamsLike
+) {
+  if (searchParams.has("item") || params.base === "aria") {
+    return params.item
+  }
+  return RETRO_SHOWCASE_ITEMS[params.style] ?? params.item
+}
+
 // If preset param exists, decode it and overlay on raw params.
 // V1 presets don't encode chartColor — fall back to the colored
 // theme that base-color themes originally borrowed charts from.
-type SearchParamsLike = Pick<URLSearchParams, "get" | "has">
 
 function resolvePresetParams(
   rawParams: DesignSystemSearchParams,
@@ -221,7 +242,7 @@ function resolvePresetParams(
     const decoded = decodePreset(rawParams.preset)
     if (decoded) {
       const presetOverrides = resolvePresetOverrides(searchParams, decoded)
-      return normalizeDesignSystemParams({
+      const resolved = normalizeDesignSystemParams({
         ...decoded,
         ...presetOverrides,
         base: rawParams.base,
@@ -233,9 +254,11 @@ function resolvePresetParams(
         size: rawParams.size,
         custom: rawParams.custom,
       })
+      return { ...resolved, item: resolveDefaultItem(resolved, searchParams) }
     }
   }
-  return normalizeDesignSystemParams(rawParams)
+  const resolved = normalizeDesignSystemParams(rawParams)
+  return { ...resolved, item: resolveDefaultItem(resolved, searchParams) }
 }
 
 export function buildPresetUrlUpdate(
