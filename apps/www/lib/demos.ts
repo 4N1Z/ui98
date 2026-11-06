@@ -47,6 +47,8 @@ import ToastDemo from "@/demos/toast"
 import ToggleGroupDemo from "@/demos/toggle-group"
 import ToggleDemo from "@/demos/toggle"
 import TooltipDemo from "@/demos/tooltip"
+import WebBannerDemo from "@/demos/web-banner"
+import WebButtonDemo from "@/demos/web-button"
 
 export const DEMOS: Record<string, ComponentType> = {
   accordion: AccordionDemo,
@@ -95,4 +97,6 @@ export const DEMOS: Record<string, ComponentType> = {
   "toggle-group": ToggleGroupDemo,
   toggle: ToggleDemo,
   tooltip: TooltipDemo,
+  "web-banner": WebBannerDemo,
+  "web-button": WebButtonDemo,
 }

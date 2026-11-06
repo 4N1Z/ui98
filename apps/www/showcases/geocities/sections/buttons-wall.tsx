@@ -1,6 +1,4 @@
-import { cn } from "ui98"
-
-import { Tooltip, TooltipContent, TooltipTrigger } from "ui98"
+import { Tooltip, TooltipContent, TooltipTrigger, WebButton } from "ui98"
 
 // 88x31 buttons: the universal currency of the 1999 web.
 const BUTTONS: { label: string; className: string; tip: string }[] = [
@@ -76,14 +74,9 @@ export function ButtonsWall() {
         {BUTTONS.map((button) => (
           <Tooltip key={button.label}>
             <TooltipTrigger>
-              <span
-                className={cn(
-                  "flex h-[31px] w-[88px] items-center justify-center border border-black px-1 text-center text-[10px] leading-[1.05] font-bold uppercase [image-rendering:pixelated]",
-                  button.className
-                )}
-              >
+              <WebButton font="verdana" className={button.className}>
                 <span>{button.label}</span>
-              </span>
+              </WebButton>
             </TooltipTrigger>
             <TooltipContent>{button.tip}</TooltipContent>
           </Tooltip>

@@ -41,7 +41,7 @@ Import the Tailwind build of the theme instead, so you get the theme tokens as u
 
 ## Components
 
-Accordion, Alert, Alert Dialog, Aspect Ratio, Avatar, Badge, Breadcrumb, Button, Button Group, Card, Checkbox, Collapsible, Combobox, Context Menu, Dialog, Dropdown Menu, Empty, Field, Hover Card, Input, Input Group, Item, Kbd, Label, Menubar, Native Select, Navigation Menu, Pagination, Popover, Progress, Radio Group, Scroll Area, Select, Separator, Sheet, Skeleton, Slider, Spinner, Switch, Table, Tabs, Textarea, Toast, Toggle, Toggle Group, Tooltip.
+Accordion, Alert, Alert Dialog, Aspect Ratio, Avatar, Badge, Breadcrumb, Button, Button Group, Card, Checkbox, Collapsible, Combobox, Context Menu, Dialog, Dropdown Menu, Empty, Field, Hover Card, Input, Input Group, Item, Kbd, Label, Menubar, Native Select, Navigation Menu, Pagination, Popover, Progress, Radio Group, Scroll Area, Select, Separator, Sheet, Skeleton, Slider, Spinner, Switch, Table, Tabs, Textarea, Toast, Toggle, Toggle Group, Tooltip, Web Banner (468×60), Web Button (88×31).
 
 Docs and live previews: https://github.com/4N1Z/ui98
 

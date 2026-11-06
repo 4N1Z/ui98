@@ -234,4 +234,15 @@ export const COMPONENTS: ComponentDoc[] = [
     description:
       "A small hint that appears when hovering or focusing an element.",
   },
+  {
+    name: "web-banner",
+    title: "Web Banner",
+    description: "A 468×60 full-banner ad, the billboard of the late-90s web.",
+  },
+  {
+    name: "web-button",
+    title: "Web Button",
+    description:
+      "An 88×31 web button: the badge every homepage linked out with.",
+  },
 ]
