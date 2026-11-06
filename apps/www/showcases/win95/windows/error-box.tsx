@@ -7,7 +7,6 @@ export function ErrorBox() {
   return (
     <Window
       title="ui98"
-      className="w-[380px]"
       closeOnly
       footer={
         <>

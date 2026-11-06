@@ -16,12 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "ui98"
 
 export function FindWindow() {
   return (
-    <Window
-      title="Find: All Files"
-      icon={<SearchIcon />}
-      className="w-[440px]"
-      closeOnly
-    >
+    <Window title="Find: All Files" icon={<SearchIcon />} closeOnly>
       <div className="flex gap-3">
         <Tabs defaultValue="name" className="flex-1">
           <TabsList>

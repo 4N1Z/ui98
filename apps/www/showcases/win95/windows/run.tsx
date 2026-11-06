@@ -9,7 +9,6 @@ export function RunWindow() {
   return (
     <Window
       title="Run"
-      className="w-[360px]"
       closeOnly
       footer={
         <>

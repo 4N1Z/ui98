@@ -1,5 +1,8 @@
-import { DesktopIcons } from "@/showcases/win95/desktop-icons"
+import { HardDriveIcon } from "lucide-react"
+import { Alert, AlertAction, AlertDescription, AlertTitle, Button } from "ui98"
+
 import { Taskbar } from "@/showcases/win95/taskbar"
+import { Topbar } from "@/showcases/win95/topbar"
 import { DialUpWindow } from "@/showcases/win95/windows/dial-up"
 import { DisplayPropertiesWindow } from "@/showcases/win95/windows/display-properties"
 import { ErrorBox } from "@/showcases/win95/windows/error-box"
@@ -9,44 +12,47 @@ import { NotepadWindow } from "@/showcases/win95/windows/notepad"
 import { RunWindow } from "@/showcases/win95/windows/run"
 import { WelcomeWindow } from "@/showcases/win95/windows/welcome"
 
-// A Windows 95 desktop built from ui98 components. The "desktop" is a fixed
-// 1600x1000 canvas with absolutely positioned windows so it reads like a
-// screenshot of a real session rather than a grid of cards.
+// A Windows 95 session built from ui98 components, laid out like the Y2K
+// portal: a toolbar, a system notice, three columns of windows and the
+// taskbar. The page is a fixed 1280px canvas so it reads like a screenshot.
 export default function Desktop01() {
   return (
     <div className="overflow-auto bg-[#008080] contain-[paint] dark:bg-[#1a1a1a]">
       <div className="flex w-full min-w-max justify-center">
         <div
-          className="relative flex h-[1000px] w-[1600px] flex-col"
+          className="relative flex min-h-[1000px] w-[1280px] flex-col"
           data-slot="capture-target"
         >
-          <div className="relative flex-1">
-            <div className="absolute top-4 left-4">
-              <DesktopIcons />
-            </div>
-            <div className="absolute top-6 left-36">
-              <WelcomeWindow />
-            </div>
-            <div className="absolute top-[420px] left-36">
-              <DisplayPropertiesWindow />
-            </div>
-            <div className="absolute top-10 left-[640px]">
-              <ExplorerWindow />
-            </div>
-            <div className="absolute top-[560px] left-[600px]">
-              <FindWindow />
-            </div>
-            <div className="absolute top-6 left-[1210px]">
-              <NotepadWindow />
-            </div>
-            <div className="absolute top-[480px] left-[1100px]">
-              <DialUpWindow />
-            </div>
-            <div className="absolute top-[730px] left-[1200px]">
-              <ErrorBox />
-            </div>
-            <div className="absolute top-[740px] left-[180px]">
-              <RunWindow />
+          <div className="relative flex flex-1 flex-col gap-4 p-4 pb-16">
+            <Topbar />
+            <Alert>
+              <HardDriveIcon />
+              <AlertTitle>New Hardware Found</AlertTitle>
+              <AlertDescription>
+                Windows has found a Standard 28800 bps Modem and is installing
+                the software for it.
+              </AlertDescription>
+              <AlertAction>
+                <Button size="xs" variant="secondary">
+                  Details
+                </Button>
+              </AlertAction>
+            </Alert>
+            <div className="grid grid-cols-3 items-start gap-4">
+              <div className="flex flex-col gap-4">
+                <WelcomeWindow />
+                <DisplayPropertiesWindow />
+                <RunWindow />
+              </div>
+              <div className="flex flex-col gap-4">
+                <ExplorerWindow />
+                <FindWindow />
+              </div>
+              <div className="flex flex-col gap-4">
+                <NotepadWindow />
+                <DialUpWindow />
+                <ErrorBox />
+              </div>
             </div>
           </div>
           <Taskbar />

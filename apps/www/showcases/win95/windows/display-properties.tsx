@@ -40,7 +40,6 @@ export function DisplayPropertiesWindow() {
     <Window
       title="Display Properties"
       icon={<MonitorIcon />}
-      className="w-[420px]"
       closeOnly
       footer={
         <>

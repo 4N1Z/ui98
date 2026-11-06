@@ -35,7 +35,6 @@ export function NotepadWindow() {
     <Window
       title="readme.txt - Notepad"
       icon={<FileTextIcon />}
-      className="w-[380px]"
       contentClassName="gap-2"
     >
       <Menubar className="-mx-1">

@@ -66,7 +66,6 @@ export function ExplorerWindow() {
     <Window
       title="C:\ui98\components"
       icon={<FolderOpenIcon />}
-      className="w-[560px]"
       contentClassName="gap-2"
     >
       <Menubar className="-mx-1">

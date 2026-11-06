@@ -9,7 +9,6 @@ export function DialUpWindow() {
     <Window
       title="Connecting to ui98 Online"
       icon={<PhoneIcon />}
-      className="w-[360px]"
       closeOnly
       footer={<Button variant="outline">Cancel</Button>}
     >

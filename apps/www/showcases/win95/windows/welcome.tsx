@@ -11,7 +11,6 @@ export function WelcomeWindow() {
     <Window
       title="Welcome to ui98"
       icon={<SparklesIcon />}
-      className="w-[460px]"
       footer={
         <>
           <Button variant="outline">What&apos;s New</Button>
