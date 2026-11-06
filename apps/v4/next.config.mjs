@@ -49,8 +49,9 @@ const nextConfig = {
     // 98ui: `next build` on Vercel's 8 GB build machine was OOM-killed (exit
     // 137) during static generation. Each render worker loads the whole
     // 33-style module graph, so cap the worker count and the number of pages
-    // rendered at once instead of spawning one worker per vCPU.
-    cpus: 2,
+    // rendered at once instead of spawning one worker per vCPU. /view/* is
+    // rendered on demand (see app/(view)/view/[style]/[name]/page.tsx).
+    cpus: 1,
     workerThreads: false,
     staticGenerationMaxConcurrency: 4,
     staticGenerationMinPagesPerWorker: 50,

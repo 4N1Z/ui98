@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm icons:dev & next dev --turbopack --port 4000",
-    "build": "pnpm registry:build && cross-env TURBO_TASKS_AVAILABLE_PARALLELISM=2 next build",
+    "build": "pnpm registry:build && cross-env TURBO_TASKS_AVAILABLE_PARALLELISM=1 next build",
     "start": "next start --port 4000",
     "preview": "pnpm registry:build && next build && next start --port 4000",
     "lint": "eslint . --cache --cache-location .eslintcache",
