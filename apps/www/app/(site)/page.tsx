@@ -10,6 +10,7 @@ const LINKS = [
   { href: "/win95", label: "win95" },
   { href: "/geocities", label: "geocities" },
   { href: "/y2k", label: "y2k" },
+  { href: "/88x31", label: "88x31" },
   { href: "https://github.com/4N1Z/ui98", label: "github" },
   { href: "https://www.npmjs.com/package/ui98", label: "npm" },
 ]
@@ -35,6 +36,13 @@ const ERAS = [
     year: "2001",
     blurb: "Glossy gel, sky blue and portal sidebars.",
     swatches: ["#e8f1fb", "#0a64d6", "#7fd3ff", "#ff9900"],
+  },
+  {
+    href: "/88x31",
+    name: "88x31",
+    year: "1997",
+    blurb: "The button wall: silver plates, navy gradients, red Now!",
+    swatches: ["#c0c0c0", "#000080", "#e00000", "#ffcc00"],
   },
 ]
 
@@ -73,7 +81,7 @@ export default function LandingPage() {
               <p className="mt-3 text-lg leading-snug">
                 React components for the web as it was:
                 <br />
-                Windows&nbsp;95, GeoCities and Y2K.
+                Windows&nbsp;95, GeoCities, Y2K and the 88x31 button wall.
               </p>
             </div>
             <Stamp className="hidden size-28 shrink-0 sm:block" />
@@ -102,7 +110,7 @@ export default function LandingPage() {
           <InstallSnippet />
         </Frame>
 
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2">
           {ERAS.map((era) => (
             <Link key={era.href} href={era.href} className="group block">
               <Frame className="h-full transition-transform group-hover:-translate-y-0.5">

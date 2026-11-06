@@ -38,6 +38,9 @@ export default function DocsLayout({
           <Link href="/y2k" className="hover:underline">
             <u>Y</u>2K
           </Link>
+          <Link href="/88x31" className="hover:underline">
+            <u>8</u>8x31
+          </Link>
           <a
             href="https://github.com/4N1Z/ui98"
             className="ml-auto hover:underline"

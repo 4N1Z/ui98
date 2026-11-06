@@ -41,7 +41,8 @@ export default function DocsPage() {
         </p>
         <Code>{`import "ui98/win95.css"      // Windows 95
 // import "ui98/geocities.css" // GeoCities
-// import "ui98/y2k.css"       // Y2K`}</Code>
+// import "ui98/y2k.css"       // Y2K
+// import "ui98/88x31.css"     // the 88x31 button wall`}</Code>
       </section>
 
       <section className="flex flex-col gap-2">

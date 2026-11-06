@@ -6,7 +6,15 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import path from "node:path"
 
-const THEMES = ["win95", "geocities", "y2k"]
+// Theme name -> the theme files it is made of, in cascade order. 88x31 is
+// drawn on top of the win95 plates and bevels.
+const LAYERS = {
+  win95: ["win95"],
+  geocities: ["geocities"],
+  y2k: ["y2k"],
+  "88x31": ["win95", "88x31"],
+}
+const THEMES = Object.keys(LAYERS)
 const root = path.resolve(import.meta.dirname, "..")
 const src = (p) => readFileSync(path.join(root, "src", p), "utf8")
 const cli = path.join(
@@ -36,7 +44,7 @@ for (const theme of THEMES) {
       `@source "../components";`,
       src("styles/variants.css"),
       src("styles/base.css"),
-      src(`themes/${theme}.css`),
+      ...LAYERS[theme].map((layer) => src(`themes/${layer}.css`)),
     ].join("\n")
   )
 }

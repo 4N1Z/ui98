@@ -1,7 +1,7 @@
 {
   "name": "ui98",
   "version": "0.1.0",
-  "description": "Retro React components: Windows 95, GeoCities and Y2K. Built on Base UI and Tailwind CSS.",
+  "description": "Retro React components: Windows 95, GeoCities, Y2K and the 88x31 button wall. Built on Base UI and Tailwind CSS.",
   "license": "MIT",
   "type": "module",
   "sideEffects": [
@@ -16,7 +16,8 @@
     "geocities",
     "y2k",
     "base-ui",
-    "tailwindcss"
+    "tailwindcss",
+    "88x31"
   ],
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "./win95.css": "./dist/win95.css",
     "./geocities.css": "./dist/geocities.css",
     "./y2k.css": "./dist/y2k.css",
+    "./88x31.css": "./dist/88x31.css",
     "./tailwind/*.css": "./dist/tailwind/*.css",
     "./package.json": "./package.json"
   },

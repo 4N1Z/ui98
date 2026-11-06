@@ -1,6 +1,6 @@
 # ui98
 
-React components for the web as it was: Windows 95, GeoCities and Y2K.
+React components for the web as it was: Windows 95, GeoCities, Y2K and the 88x31 button wall.
 
 ```bash
 pnpm i ui98

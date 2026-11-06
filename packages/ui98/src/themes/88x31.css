@@ -1,0 +1,209 @@
+/*
+ * ui98 — 88x31 theme.
+ * The web-button wall as a whole UI: silver bevelled plates with a 1px black
+ * keyline, navy gradient plates with white bold Verdana, red italic "Now!",
+ * yellow callouts, and a grey diamond-checker page. Loaded on top of the
+ * win95 rules (same plates and bevels); only what differs is restated here.
+ */
+
+:root {
+  --background: #d4d4d4;
+  --foreground: #000000;
+  --card: #c0c0c0;
+  --card-foreground: #000000;
+  --popover: #c0c0c0;
+  --popover-foreground: #000000;
+  --primary: #000080;
+  --primary-foreground: #ffffff;
+  --secondary: #ffcc00;
+  --secondary-foreground: #000000;
+  --muted: #e4e4e4;
+  --muted-foreground: #3a3a3a;
+  --accent: #e00000;
+  --accent-foreground: #ffffff;
+  --destructive: #cc0000;
+  --border: #000000;
+  --input: #808080;
+  --ring: #000000;
+  --chart-1: #000080;
+  --chart-2: #e00000;
+  --chart-3: #ffcc00;
+  --chart-4: #008000;
+  --chart-5: #00a0e0;
+  --radius: 0;
+  --sidebar: #000080;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffcc00;
+  --sidebar-primary-foreground: #000000;
+  --sidebar-accent: #1084d0;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #000000;
+  --sidebar-ring: #ffcc00;
+  --font-sans: Verdana, Geneva, "DejaVu Sans", sans-serif;
+  --font-heading: "Arial Black", "Arial", "Arimo", sans-serif;
+  /* The plate recipes, reused below. */
+  --plate-out:
+    0 0 0 1px #000, inset -1px -1px #404040, inset 1px 1px #fff,
+    inset -2px -2px #808080, inset 2px 2px #e8e8e8;
+  --plate-in:
+    0 0 0 1px #000, inset 1px 1px #404040, inset -1px -1px #fff,
+    inset 2px 2px #808080, inset -2px -2px #e8e8e8;
+  --navy-plate: linear-gradient(180deg, #2a5bd7 0%, #000080 55%, #00005a 100%);
+}
+
+/* Night mode: the black-background buttons with glowing type. */
+.dark {
+  --background: #000000;
+  --foreground: #e8e8e8;
+  --card: #111111;
+  --card-foreground: #e8e8e8;
+  --popover: #111111;
+  --popover-foreground: #e8e8e8;
+  --primary: #00a0ff;
+  --primary-foreground: #ffffff;
+  --secondary: #ffcc00;
+  --secondary-foreground: #000000;
+  --muted: #1c1c1c;
+  --muted-foreground: #b0b0b0;
+  --accent: #ff2020;
+  --accent-foreground: #ffffff;
+  --destructive: #ff4040;
+  --border: #808080;
+  --input: #808080;
+  --ring: #ffcc00;
+}
+
+@layer base {
+  body {
+    background-color: #cfcfcf;
+    background-image:
+      linear-gradient(45deg, #e2e2e2 25%, transparent 25%),
+      linear-gradient(-45deg, #e2e2e2 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #e2e2e2 75%),
+      linear-gradient(-45deg, transparent 75%, #e2e2e2 75%);
+    background-size: 48px 48px;
+    background-position:
+      0 0,
+      0 24px,
+      24px -24px,
+      -24px 0;
+  }
+  .dark body {
+    background-color: #000;
+    background-image: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  /* MARK: Button */
+  .cn-button {
+    @apply font-bold tracking-tight;
+  }
+
+  .cn-button-variant-default {
+    @apply bg-(image:--navy-plate) text-white [text-shadow:1px_1px_0_#000] shadow-(--plate-out) hover:brightness-125 active:shadow-(--plate-in) aria-expanded:shadow-(--plate-in);
+  }
+
+  .cn-button-variant-outline,
+  .cn-button-variant-secondary {
+    @apply bg-[linear-gradient(180deg,#f0f0f0,#c0c0c0_60%,#a8a8a8)] shadow-(--plate-out) active:shadow-(--plate-in) aria-expanded:shadow-(--plate-in);
+  }
+
+  .cn-button-variant-secondary {
+    @apply bg-[linear-gradient(180deg,#fff27a,#ffcc00_60%,#e0a800)] text-black;
+  }
+
+  .cn-button-variant-destructive {
+    @apply bg-[linear-gradient(180deg,#ff6a6a,#e00000_60%,#a00000)] text-[#ffff00] italic [text-shadow:1px_1px_0_#000] shadow-(--plate-out) active:shadow-(--plate-in);
+  }
+
+  .cn-button-variant-link {
+    @apply font-bold text-[#0000ee] hover:text-[#e00000];
+  }
+
+  /* MARK: Badge */
+  .cn-badge {
+    @apply h-[18px] px-1.5 text-[10px] font-bold uppercase;
+  }
+
+  /* Red italic "Now!", the most common flourish on the wall. */
+  .cn-badge-variant-default {
+    @apply bg-[#e00000] text-[#ffff00] italic [text-shadow:1px_1px_0_#000] shadow-[0_0_0_1px_#000];
+  }
+
+  .cn-badge-variant-secondary {
+    @apply bg-[#ffcc00] text-black shadow-[0_0_0_1px_#000];
+  }
+
+  .cn-badge-variant-outline {
+    @apply bg-black text-[#00ff40] shadow-[0_0_0_1px_#808080];
+  }
+
+  .cn-badge-variant-destructive {
+    @apply bg-black text-[#ff3030] shadow-[0_0_0_1px_#ff3030];
+  }
+
+  /* MARK: Card */
+  /* The intro box from the wall: a silver plate with a navy title strip
+     edged in gold. */
+  .cn-card {
+    @apply shadow-(--plate-out);
+  }
+
+  .cn-card-header {
+    @apply bg-(image:--navy-plate) [text-shadow:1px_1px_0_#000] shadow-[inset_0_-2px_#ffcc00];
+  }
+
+  .cn-card-title {
+    @apply font-heading text-sm tracking-wide uppercase;
+  }
+
+  .cn-card-description {
+    @apply text-[#ffcc00];
+  }
+
+  /* MARK: Dialog */
+  .cn-dialog-content {
+    @apply shadow-(--plate-out) outline-0;
+  }
+
+  .cn-dialog-title {
+    @apply bg-(image:--navy-plate) [text-shadow:1px_1px_0_#000] shadow-[inset_0_-2px_#ffcc00];
+  }
+
+  /* MARK: Alert Dialog */
+  .cn-alert-dialog-content {
+    @apply shadow-(--plate-out) outline-0;
+  }
+
+  /* MARK: Tabs */
+  .cn-tabs-trigger {
+    @apply font-bold text-[#404040] data-active:bg-(image:--navy-plate) data-active:text-white! data-active:[text-shadow:1px_1px_0_#000];
+  }
+
+  /* MARK: Switch */
+  .cn-switch {
+    @apply data-checked:bg-[#000080];
+  }
+
+  /* MARK: Tooltip */
+  .cn-tooltip-content {
+    @apply bg-[#ffffcc] font-bold shadow-[2px_2px_0_#000];
+  }
+
+  /* MARK: Progress */
+  .cn-progress-indicator {
+    @apply bg-[repeating-linear-gradient(90deg,#000080_0_10px,transparent_10px_12px)];
+  }
+
+  /* MARK: Separator */
+  .cn-separator {
+    @apply bg-[repeating-linear-gradient(90deg,#000_0_4px,transparent_4px_8px)];
+  }
+}

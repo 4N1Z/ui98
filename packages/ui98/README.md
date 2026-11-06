@@ -1,6 +1,6 @@
 # ui98
 
-React components for the web as it was: **Windows 95**, **GeoCities** and **Y2K**.
+React components for the web as it was: **Windows 95**, **GeoCities**, **Y2K** and the **88x31 button wall**.
 
 Accessible primitives from [Base UI](https://base-ui.com), styled with Tailwind CSS, in the shape of [shadcn/ui](https://ui.shadcn.com), but shipped as a normal npm package.
 
@@ -15,7 +15,7 @@ pnpm i ui98
 Import one theme stylesheet once, at the root of your app:
 
 ```tsx
-import "ui98/win95.css" // or "ui98/geocities.css", "ui98/y2k.css"
+import "ui98/win95.css" // or "ui98/geocities.css", "ui98/y2k.css", "ui98/88x31.css"
 ```
 
 Then use the components:

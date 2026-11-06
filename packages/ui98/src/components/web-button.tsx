@@ -8,7 +8,7 @@ import { cn } from "../lib/utils.js"
 // The sizes are fixed on purpose; they look the same in every theme.
 
 const webArtVariants = cva(
-  "inline-flex shrink-0 items-center justify-center overflow-hidden text-center leading-[1.05] break-words [text-wrap:balance] select-none [image-rendering:pixelated] [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  "relative inline-flex shrink-0 items-center justify-center overflow-hidden text-center leading-[1.05] break-words [text-wrap:balance] select-none [image-rendering:pixelated] [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       border: {
@@ -19,6 +19,10 @@ const webArtVariants = cva(
         dotted: "border border-dotted border-black",
         double: "border-[3px] border-double border-black",
         none: "border-0",
+        // The bevelled silver plate most of the 1990s wall was cut from:
+        // a black keyline around a raised edge.
+        plate:
+          "border-0 shadow-[0_0_0_1px_#000,inset_-1px_-1px_#404040,inset_1px_1px_#fff,inset_-2px_-2px_#808080,inset_2px_2px_#e8e8e8]",
       },
       font: {
         pixel:
@@ -114,4 +118,81 @@ function WebButtonTag({
   )
 }
 
-export { WebButton, WebBanner, WebButtonTag, webArtVariants }
+/**
+ * The narrow colored strip down the left edge with sideways text
+ * ("FREE", "GET", "NEW"). Put it first inside a WebButton.
+ */
+function WebButtonStrip({
+  className,
+  background = "#e00000",
+  color = "#ffffff",
+  style,
+  ...props
+}: React.ComponentProps<"span"> & { background?: string; color?: string }) {
+  return (
+    <span
+      data-slot="web-button-strip"
+      className={cn(
+        "-my-px -ml-1 flex h-[calc(100%+2px)] w-[11px] shrink-0 items-center justify-center font-[family-name:Verdana,Geneva,sans-serif] text-[6px] leading-none font-bold tracking-wide uppercase [writing-mode:vertical-rl] rotate-180",
+        className
+      )}
+      style={{ background, color, ...style }}
+      {...props}
+    />
+  )
+}
+
+/**
+ * Two stacked lines: a small lead-in over a big word
+ * ("Best viewed with" / "ANY BROWSER").
+ */
+function WebButtonLabel({
+  className,
+  top,
+  children,
+  ...props
+}: React.ComponentProps<"span"> & { top?: React.ReactNode }) {
+  return (
+    <span
+      data-slot="web-button-label"
+      className={cn(
+        "flex min-w-0 flex-1 flex-col items-center justify-center leading-[1.05]",
+        className
+      )}
+      {...props}
+    >
+      {top && <span className="text-[0.8em] font-normal">{top}</span>}
+      <span className="text-[1.3em] whitespace-nowrap">{children}</span>
+    </span>
+  )
+}
+
+/** The red italic "Now!" flourish, bottom-right. */
+function WebButtonNow({
+  className,
+  children = "Now!",
+  ...props
+}: React.ComponentProps<"span">) {
+  return (
+    <span
+      data-slot="web-button-now"
+      className={cn(
+        "absolute right-1 bottom-0 font-[family-name:'Times_New_Roman',Tinos,serif] text-[12px] leading-none font-bold text-[#e00000] italic [text-shadow:1px_1px_0_#000]",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </span>
+  )
+}
+
+export {
+  WebButton,
+  WebBanner,
+  WebButtonTag,
+  WebButtonStrip,
+  WebButtonLabel,
+  WebButtonNow,
+  webArtVariants,
+}

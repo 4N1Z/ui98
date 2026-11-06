@@ -1,4 +1,10 @@
-import { WebButton, WebButtonTag } from "ui98"
+import {
+  WebButton,
+  WebButtonLabel,
+  WebButtonNow,
+  WebButtonStrip,
+  WebButtonTag,
+} from "ui98"
 
 export default function WebButtonDemo() {
   return (
@@ -44,6 +50,24 @@ export default function WebButtonDemo() {
         font="verdana"
       >
         Sign my guestbook
+      </WebButton>
+      <WebButton
+        border="plate"
+        font="verdana"
+        background="linear-gradient(180deg,#f4f4f4,#c8c8c8 60%,#a8a8a8)"
+        color="#000"
+      >
+        <WebButtonStrip>get</WebButtonStrip>
+        <WebButtonLabel top="pnpm i">ui98</WebButtonLabel>
+      </WebButton>
+      <WebButton
+        border="plate"
+        font="arial"
+        background="linear-gradient(180deg,#2a5bd7,#000080)"
+        color="#fff"
+      >
+        <WebButtonLabel top="Navigator">&nbsp;</WebButtonLabel>
+        <WebButtonNow />
       </WebButton>
     </div>
   )

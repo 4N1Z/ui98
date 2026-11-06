@@ -6,6 +6,7 @@ const THEMES = [
   { name: "win95", label: "Win95" },
   { name: "geocities", label: "GeoCities" },
   { name: "y2k", label: "Y2K" },
+  { name: "88x31", label: "88x31" },
 ] as const
 
 // Each theme lives in its own root layout, so a component is previewed in an
