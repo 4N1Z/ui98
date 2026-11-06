@@ -33,21 +33,24 @@ export function Taskbar() {
       <Toggle
         pressed
         aria-label="ui98 Portal - Internet Explorer"
-        className="h-7 w-48 justify-start border-[#0c3a9a] bg-[linear-gradient(to_bottom,#1d4fb8,#163f98)] px-2 text-white shadow-[inset_0_1px_3px_rgba(0,0,0,.45)] hover:bg-[linear-gradient(to_bottom,#1d4fb8,#163f98)] hover:text-white"
+        className="h-7 w-60 min-w-0 justify-start overflow-hidden border-[#0c3a9a] bg-[linear-gradient(to_bottom,#1d4fb8,#163f98)] px-2 text-white shadow-[inset_0_1px_3px_rgba(0,0,0,.45)] hover:bg-[linear-gradient(to_bottom,#1d4fb8,#163f98)] hover:text-white"
       >
-        <GlobeIcon /> ui98 Portal - Internet Explorer
+        <GlobeIcon />
+        <span className="truncate">ui98 Portal - Internet Explorer</span>
       </Toggle>
       <Toggle
         aria-label="Windows Messenger"
-        className="h-7 w-44 justify-start border-[#1a4bb8] bg-[linear-gradient(to_bottom,#5c95f0,#3a74dc)] px-2 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.4)] hover:bg-[linear-gradient(to_bottom,#6ca2f5,#4a84e8)] hover:text-white"
+        className="h-7 w-52 min-w-0 justify-start overflow-hidden border-[#1a4bb8] bg-[linear-gradient(to_bottom,#5c95f0,#3a74dc)] px-2 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.4)] hover:bg-[linear-gradient(to_bottom,#6ca2f5,#4a84e8)] hover:text-white"
       >
-        <MessageCircleIcon /> Windows Messenger
+        <MessageCircleIcon />
+        <span className="truncate">Windows Messenger</span>
       </Toggle>
       <Toggle
         aria-label="Windows Media Player"
-        className="h-7 w-44 justify-start border-[#1a4bb8] bg-[linear-gradient(to_bottom,#5c95f0,#3a74dc)] px-2 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.4)] hover:bg-[linear-gradient(to_bottom,#6ca2f5,#4a84e8)] hover:text-white"
+        className="h-7 w-52 min-w-0 justify-start overflow-hidden border-[#1a4bb8] bg-[linear-gradient(to_bottom,#5c95f0,#3a74dc)] px-2 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.4)] hover:bg-[linear-gradient(to_bottom,#6ca2f5,#4a84e8)] hover:text-white"
       >
-        <MusicIcon /> Windows Media Player
+        <MusicIcon />
+        <span className="truncate">Windows Media Player</span>
       </Toggle>
       <div className="ml-auto flex h-10 items-center gap-3 bg-[linear-gradient(to_bottom,#1b9de9_0%,#0f8ad8_8%,#0b7bc9_40%,#0a6fb8_100%)] px-3 text-xs text-white shadow-[inset_1px_0_0_rgba(0,0,0,.25),inset_2px_1px_0_rgba(255,255,255,.3)]">
         <Tooltip>

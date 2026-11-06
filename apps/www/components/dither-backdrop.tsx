@@ -110,7 +110,7 @@ function renderDither(
 export function DitherBackdrop({
   src,
   light = "#f1f3ec",
-  dark = "#1fa35a",
+  dark = "#2563c9",
   className,
 }: {
   src?: string

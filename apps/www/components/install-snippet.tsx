@@ -4,7 +4,7 @@ import * as React from "react"
 
 const INSTALL = "pnpm i ui98"
 
-const USAGE = `import "ui98/win95.css" // or geocities.css, y2k.css
+const USAGE = `import "ui98/win95.css" // or geocities.css, y2k.css, 88x31.css
 import { Button } from "ui98"
 
 export default function App() {

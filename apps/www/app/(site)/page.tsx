@@ -68,7 +68,7 @@ function Frame({
 
 export default function LandingPage() {
   return (
-    <div className="relative min-h-svh overflow-x-hidden bg-[#1fa35a]">
+    <div className="relative min-h-svh overflow-x-hidden bg-[#2563c9]">
       <DitherBackdrop className="fixed inset-0 h-full w-full" />
 
       <main className="relative mx-auto flex max-w-2xl flex-col gap-6 px-4 py-10 sm:py-16">
@@ -104,7 +104,7 @@ export default function LandingPage() {
         <Frame>
           <h2 className="font-pixel text-3xl leading-none">Install</h2>
           <p className="mt-2 text-sm">
-            One package, three eras. Built on Base UI and Tailwind CSS, in the
+            One package, four eras. Built on Base UI and Tailwind CSS, in the
             shape of shadcn/ui, but shipped as a normal dependency.
           </p>
           <InstallSnippet />
@@ -194,8 +194,8 @@ function Floppy({ className }: { className?: string }) {
       <rect x="4" y="1" width="7" height="5" fill="#c9c4b0" />
       <rect x="8" y="2" width="2" height="3" fill="#1d3b2a" />
       <rect x="3" y="8" width="10" height="7" fill="#f4f1e6" />
-      <rect x="4" y="10" width="8" height="1" fill="#1fa35a" />
-      <rect x="4" y="12" width="6" height="1" fill="#1fa35a" />
+      <rect x="4" y="10" width="8" height="1" fill="#2563c9" />
+      <rect x="4" y="12" width="6" height="1" fill="#2563c9" />
     </svg>
   )
 }
