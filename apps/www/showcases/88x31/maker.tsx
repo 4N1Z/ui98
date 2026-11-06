@@ -90,8 +90,8 @@ export function ButtonMaker() {
         <CardTitle>Button Maker 2.0</CardTitle>
         <CardDescription>Make your own 88x31. Free!!</CardDescription>
       </CardHeader>
-      <CardContent className="grid gap-5 md:grid-cols-[1fr_auto]">
-        <div className="grid gap-3 sm:grid-cols-2">
+      <CardContent className="flex flex-col-reverse gap-5">
+        <div className="grid grid-cols-2 gap-3">
           <Row label="Small line" htmlFor="bm-top">
             <Input
               id="bm-top"

@@ -1,18 +1,11 @@
-import { Button } from "ui98"
-import { Label } from "ui98"
-import { Progress } from "ui98"
-import { Separator } from "ui98"
-import { Tooltip, TooltipContent, TooltipTrigger } from "ui98"
-
-const LINKS = [
-  "Home",
-  "About Me",
-  "My Cats",
-  "Links",
-  "Guestbook",
-  "Webrings",
-  "Email Me",
-]
+import {
+  Label,
+  Progress,
+  Separator,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "ui98"
 
 const COUNTER = "004217"
 
@@ -39,27 +32,11 @@ function HitCounter() {
   )
 }
 
-export function Nav() {
+// The old sidebar widgets: hit counter, page-load meter, last update.
+export function Stats() {
   return (
-    <nav className="flex flex-col gap-3 p-3 text-[13px]">
-      <div className="text-center font-bold uppercase">~ Navigation ~</div>
-      <ul className="flex flex-col">
-        {LINKS.map((link) => (
-          <li key={link} className="flex items-center gap-1">
-            <span aria-hidden className="text-[#ff0000]">
-              &raquo;
-            </span>
-            <Button
-              variant="link"
-              size="sm"
-              className="h-6 min-w-0 justify-start px-1"
-            >
-              {link}
-            </Button>
-          </li>
-        ))}
-      </ul>
-      <Separator />
+    <section className="flex flex-col gap-3 text-[13px]">
+      <h2 className="text-xl font-bold">Site Stats</h2>
       <div className="flex flex-col items-center gap-1 text-center">
         <span className="font-bold">You are visitor #</span>
         <HitCounter />
@@ -75,6 +52,6 @@ export function Nav() {
         <span className="font-bold">Sign my guestbook!</span>
         <span className="italic">Last update: 11/02/99</span>
       </div>
-    </nav>
+    </section>
   )
 }

@@ -1,39 +1,69 @@
+import { TriangleAlertIcon } from "lucide-react"
+import { Alert, AlertDescription, AlertTitle } from "ui98"
+
+import { Statusbar } from "@/showcases/geocities/statusbar"
+import { Topbar } from "@/showcases/geocities/topbar"
 import { About } from "@/showcases/geocities/sections/about"
 import { ButtonsWall } from "@/showcases/geocities/sections/buttons-wall"
-import { Footer } from "@/showcases/geocities/sections/footer"
 import { Guestbook } from "@/showcases/geocities/sections/guestbook"
-import { Header } from "@/showcases/geocities/sections/header"
-import { Nav } from "@/showcases/geocities/sections/nav"
+import { Stats } from "@/showcases/geocities/sections/stats"
 import { Webring } from "@/showcases/geocities/sections/webring"
 
-// A GeoCities personal homepage built from ui98 components. The page is a
-// centered 800px "table" on a tiled starfield, split into a 170px sidebar
-// and a main column, the way FrontPage laid things out in 1999.
+// One "table cell" of the homepage: white, black-bordered, Times.
+function Panel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="border-2 border-black bg-background p-4 text-foreground">
+      {children}
+    </div>
+  )
+}
+
+// A GeoCities personal homepage built from ui98 components, laid out like the
+// Y2K portal: a top bar, a notice, three columns of boxes and a status bar,
+// on a tiled starfield. The page is a fixed 1280px canvas.
 export default function Homepage01() {
   return (
-    <div className="overflow-auto bg-[#000033] bg-[radial-gradient(#ffffff_1px,transparent_1.6px),radial-gradient(#ffffff_0.8px,transparent_1.3px),radial-gradient(#ffff99_1.2px,transparent_1.8px)] bg-[length:97px_97px,53px_53px,181px_181px] bg-[position:0_0,27px_41px,70px_120px] py-6 contain-[paint]">
-      <div className="flex w-full justify-center px-4">
+    <div className="overflow-auto bg-[#000033] bg-[radial-gradient(#ffffff_1px,transparent_1.6px),radial-gradient(#ffffff_0.8px,transparent_1.3px),radial-gradient(#ffff99_1.2px,transparent_1.8px)] bg-[length:97px_97px,53px_53px,181px_181px] bg-[position:0_0,27px_41px,70px_120px] contain-[paint]">
+      <div className="flex w-full min-w-max justify-center">
         <div
-          className="w-[800px] max-w-full border-2 border-black bg-background text-foreground"
+          className="relative flex min-h-[1000px] w-[1280px] flex-col"
           data-slot="capture-target"
         >
-          <div className="border-b-2 border-black bg-[#ffffcc] p-4 dark:bg-[#1a1a00]">
-            <Header />
+          <div className="relative flex flex-1 flex-col gap-4 p-4 pb-16">
+            <Topbar />
+            <Alert>
+              <TriangleAlertIcon />
+              <AlertTitle>This page is under construction!!!</AlertTitle>
+              <AlertDescription>
+                Some links may not work yet. Check back soon for the Cats
+                section and my new MIDI jukebox.
+              </AlertDescription>
+            </Alert>
+            <div className="grid grid-cols-3 items-start gap-4">
+              <div className="flex flex-col gap-4">
+                <Panel>
+                  <About />
+                </Panel>
+              </div>
+              <div className="flex flex-col gap-4">
+                <Panel>
+                  <Guestbook />
+                </Panel>
+              </div>
+              <div className="flex flex-col gap-4">
+                <Panel>
+                  <Stats />
+                </Panel>
+                <Panel>
+                  <Webring />
+                </Panel>
+                <Panel>
+                  <ButtonsWall />
+                </Panel>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-[170px_1fr]">
-            <aside className="border-r-2 border-black bg-sidebar text-sidebar-foreground">
-              <Nav />
-            </aside>
-            <main className="flex min-w-0 flex-col gap-6 p-4">
-              <About />
-              <Guestbook />
-              <Webring />
-              <ButtonsWall />
-            </main>
-          </div>
-          <div className="border-t-2 border-black bg-[#ffffcc] p-4 dark:bg-[#1a1a00]">
-            <Footer />
-          </div>
+          <Statusbar />
         </div>
       </div>
     </div>
